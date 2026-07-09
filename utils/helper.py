@@ -1,5 +1,12 @@
 Item = dict[str, str | int | float]
 def print_inventory(inventory: list[Item]) -> None:
+    """
+    Print a formatted table of all inventory items to the console.
+    Displays each item's name, quantity, price, and computed value
+    (quantity * price) in fixed-width columns. If the inventory is
+    empty, prints a placeholder message instead of an empty table.
+
+    """
     print(f"{'Item Name':<25}{'Quantity':>10}{'Price':>12}{'Value':>14}")
     print("-" * 61)
     if not inventory:
@@ -12,21 +19,38 @@ def print_inventory(inventory: list[Item]) -> None:
                 f"{item['price']:>12.2f}{value:>14.2f}"
             )
     print("-" * 61)
-    
+
 def highest_stock_item(stock: list[dict]):
+    """
+    Find the item with the highest quantity in stock.
+
+    """
     if not stock:
         return None
     return max(stock, key=lambda item: item["quantity"])
 
 def lowest_stock_item(stock: list[dict]):
+    """
+    Find the item with the lowest quantity in stock.
+
+    """
     if not stock: 
         return None
     return min(stock, key=lambda item: item["quantity"])
 
 def total_stock_value(stock: list[dict]):
+    """
+    Calculate the combined value of all items in stock.
+
+    """
     return sum(item["quantity"] * item["price"] for item in stock)
 
 def add_stock(inventory: list[Item]) -> Item:
+    """
+    Interactively prompt the user for an item's name, quantity, and
+    price, then add it to `inventory`
+
+    """
     name = input("Enter the name of the item to add: ").strip()
     while True:
         try:
