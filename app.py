@@ -11,9 +11,11 @@ def main() -> None:
         "5. Total stock value\n"
         "6. Exit\n"
     )
+    # Infinite While loop that runs the menu variable created above
     while True:
         print(menu)
         choice = input("Choose an option (1-5): ").strip()
+    # Control Flow structure that executes different functions based on the users choice
         if choice == "1":
             print()
             print_inventory(items)
@@ -41,6 +43,7 @@ def main() -> None:
         elif choice == "6":
             print("Goodbye!")
             break
+        # Default statement that prompts the user when an invalid option is entered
         else:
             print("Invalid option. Please choose 1, 2, 3, 4, 5 or 6.")
  
