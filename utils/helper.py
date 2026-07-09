@@ -1,5 +1,18 @@
 Item = dict[str, str | int | float]
-
+def print_inventory(inventory: list[Item]) -> None:
+    print(f"{'Item Name':<25}{'Quantity':>10}{'Price':>12}{'Value':>14}")
+    print("-" * 61)
+    if not inventory:
+        print("(no items in inventory)")
+    else:
+        for item in inventory:
+            value = item["quantity"] * item["price"]
+            print(
+                f"{item['item_name']:<25}{item['quantity']:>10}"
+                f"{item['price']:>12.2f}{value:>14.2f}"
+            )
+    print("-" * 61)
+    
 def highest_stock_item(stock: list[dict]):
     if not stock:
         return None
