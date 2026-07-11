@@ -51,16 +51,3 @@ Lowest Stock Item:  Wipes (10 units)
    | `lowest_stock_item(stock)` | Returns the item dict with the lowest `quantity` |
 
 3. **`app.py`** imports the inventory and helper functions, computes the metrics, and prints a formatted report.
-
-## Extending This Project
-
-Some ideas for building on this foundation:
-- Add functions for low-stock alerts (e.g., items below a reorder threshold)
-- Load/save inventory data from a CSV or JSON file instead of a hardcoded list
-- Add a `restock_item()` or `sell_item()` function to update quantities
-- Write unit tests for the helper functions using `pytest`
-- Add command-line arguments (e.g., `--sort-by price`) using `argparse`
-
-## License
-
-This project is free to use and modify for personal or educational purposes.
